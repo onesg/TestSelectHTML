@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Selecione um estado</h2>
+    
+    <select name="estado" id="estado">
+        <option value=""></option>
+        <option value="Estado 1">Estado 1</option>
+        <option value="Estado 2">Estado 2</option>
+        <option value="Estado 3" selected>Estado 3</option>
+    </select>
+
+    <select name="cidade" id="cidade" hidden>
+        <option value="Cidade 1">Cidade 1</option>
+        <option value="Cidade 2">Cidade 2</option>
+        <option value="Cidade 3">Cidade 3</option>
+    </select>
+
+    <script>
+
+        var selection = document.getElementById('estado').options.selectedIndex;
+
+        var selection_cidade = document.getElementById('cidade');
+
+        if(selection!=0){
+            selection_cidade.setAttribute("hidden","");
+        }
+
+        //text = selection.options[selection.selectedIndex].text;
+
+        console.log(selection);
+    </script>
+
+</body>
+https://pt.stackoverflow.com/questions/373185/chamar-função-js-pelo-select
+</html>
