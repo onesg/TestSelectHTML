@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Select</title>
+    <style>
+        fieldset {
+            width: 200px;
+            /* CENTRALIZAR */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        select,input {
+            width: 100%;
+            margin: 1%;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Exemplo 1</h2>
+
+    <fieldset>
+        <legend>Região</legend>
+        <form action="#" method="post" id="form_regiao">
+
+            <!-- SELEÇÃO DE ESTADOS -->
+            <select name="select_estados" id="select_estados" onchange="mostrarCidade()">
+                <option hidden disabled selected>ESTADO</option>
+                <option value="SP">SP</option>
+            </select>
+
+            <!-- SELEÇÃO DE CIDADES -->
+            <select name="select_cidades" id="select_cidades" hidden>
+                <option hidden disabled selected>CIDADE</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="São José do Rio Preto">São José do Rio Preto</option>
+                <option value="Jales">Jales</option>
+            </select>
+
+            <!-- LINHA HORIZONTAL -->
+            <hr>
+
+            <!-- BOTÕES -->
+            <input type="button" value="Enviar" onclick="enviar()">
+
+        </form>
+        <a href="../index.html">Voltar</a>
+    </fieldset>
+
+    <script>
+        var estados = document.getElementById('select_estados');
+
+        function mostrarCidade() {
+            console.log(estados.value);
+            if (estados.selectedIndex != 0) {
+                var cidades = document.getElementById('select_cidades');
+                cidades.removeAttribute("hidden");
+            }
+        }
+
+        function enviar() {
+            if (estados.selectedIndex != 0) {
+                if (document.getElementById('select_cidades').selectedIndex != 0) {
+                    document.getElementById('form_regiao').submit();
+                }else{
+                    alert("Selecione uma cidade.");
+                }
+            } else {
+                alert("Selecione um estado.");
+            }
+
+        }
+    </script>
+
+</body>
+</html>

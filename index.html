@@ -1,46 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo</title>
+    <title>Exemplos de Select</title>
 </head>
-
 <body>
-    <h2>Exemplo teste de selection</h2>
 
-    <p>Selecione um estado</p>
+    <a href="./opcao 01/index.html">Exemplo 1</a>
+    <br>
+    <a href="./opcao 02/index.html">Exemplo 2</a>
 
-    <select name="estado" id="estado" onchange="alteracao()">
-        <option value="Estado 1">Estado 1</option>
-        <option value="Estado 2">Estado 2</option>
-        <option value="Estado 3">Estado 3</option>
-    </select>
-    
-    <select name="cidade" id="cidade" hidden>
-        <option value="Cidade 1" selected>Cidade 1</option>
-        <option value="Cidade 2">Cidade 2</option>
-        <option value="Cidade 3">Cidade 3</option>
-    </select>
-
-    <script>
-
-        var select_estado = document.getElementById('estado');
-        select_estado.selectedIndex = -1;
-
-        function alteracao() {
-
-            console.log(select_estado.value);
-
-            if (select_estado.value != null) {
-                var selection_cidade = document.getElementById('cidade');
-                selection_cidade.selectedIndex = -1;
-                selection_cidade.removeAttribute("hidden");
-            }
-
-        }
-
-    </script>
 </body>
 </html>
